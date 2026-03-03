@@ -8,7 +8,7 @@ export default function Inicio() {
     <>
       {/* Hero Section */}
       <section 
-        className="rounded-3xl mx-4 lg:mx-8 mt-8 overflow-hidden bg-cover bg-center bg-no-repeat min-h-[600px]"
+        className="rounded-none mx-4 lg:mx-8 mt-8 overflow-hidden bg-cover bg-center bg-no-repeat min-h-[600px]"
         style={{ backgroundImage: `url(${content})` }}
       >
         <div className="bg-gradient-to-r from-gray-900/90 to-gray-900/50 h-full">
@@ -23,10 +23,10 @@ export default function Inicio() {
                   y confianza en cada jornada laboral. Calidad que salva vidas.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
-                  <button className="px-8 py-3.5 bg-yellow-500 text-gray-900 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+                  <button className="px-8 py-3.5 bg-yellow-500 text-gray-900 rounded-none font-semibold hover:bg-yellow-600 transition-colors">
                     Cotizar ahora
                   </button>
-                  <button className="px-8 py-3.5 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
+                  <button className="px-8 py-3.5 bg-transparent border-2 border-white text-white rounded-none font-semibold hover:bg-white hover:text-gray-900 transition-colors">
                     Ver catálogo
                   </button>
                 </div>

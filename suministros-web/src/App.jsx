@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './Dashboard/Login'
 import Menu from './Dashboard/Menu'
 
+import Lista from './Productos/ListarProductos'
+
+import Producto from './Productos/DetalleProducto'
 
 import Header from './Componentes/Navbar'
 
@@ -17,6 +20,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Dashboard/>} />
+        <Route path="/lista" element={<Lista/>} />
+        <Route path="/producto/:id" element={<Producto/>} />
       </Routes>
     </BrowserRouter>
   )

@@ -10,7 +10,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="bg-gray-300 sticky top-0 z-50">
+    <header className="bg-[#f8f7f5] sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -21,7 +21,7 @@ export default function Navbar() {
             <img 
               src={logo} 
               alt="Safety C&G Logo" 
-              className="w-32 h-32 rounded-full"
+              className="w-32 h-32 rounded-none-full"
             />     
           </button>
 
@@ -61,7 +61,7 @@ export default function Navbar() {
 
           {/* Search and CTA */}
           <div className="flex items-center space-x-4">
-            <div className="hidden lg:flex items-center bg-white rounded-lg px-4 py-2 border border-gray-300">
+            <div className="hidden lg:flex items-center bg-white rounded-none-lg px-4 py-2 border border-gray-300">
               <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
@@ -73,7 +73,7 @@ export default function Navbar() {
             </div>
             <button 
               onClick={() => scrollToSection('contacto')}
-              className="px-6 py-2.5 bg-yellow-500 text-gray-900 rounded-lg font-semibold hover:bg-yellow-600 transition-colors"
+              className="px-6 py-2.5 bg-yellow-500 text-gray-900 rounded-none-lg font-semibold hover:bg-yellow-600 transition-colors"
             >
               Cotizar ahora
             </button>
