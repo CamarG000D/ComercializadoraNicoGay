@@ -1,79 +1,85 @@
-import React from 'react';
+import React from "react";
 
 export default function About() {
-    
   return (
-   
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+    <div className="bg-gray-50 py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Título */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-[#001F3F] mb-4">
+            ¿Quiénes Somos?
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Comercializadora Safety C&G — más de 10 años protegiendo a los trabajadores colombianos.
+          </p>
+        </div>
+
+        {/* Contenido principal */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div className="space-y-6">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-              Want anything to be easy with{' '}
-              <span className="text-gray-900">LaslesVPN.</span>
-            </h1>
-            
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Provide a network for all your needs with ease and fun using LaslesVPN discover interesting features from us.
+            <h3 className="text-3xl font-bold text-[#001F3F]">Nuestra Misión</h3>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Somos una empresa colombiana especializada en la comercialización de equipos de 
+              protección personal (EPP), dotación empresarial y elementos de seguridad industrial. 
+              Nos comprometemos a ofrecer productos de la más alta calidad que cumplan con las 
+              normas técnicas nacionales e internacionales.
+            </p>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Brindamos asesoría personalizada a cada empresa, ayudándoles a seleccionar 
+              el equipo adecuado según sus necesidades específicas y el tipo de riesgo laboral 
+              al que están expuestos sus trabajadores.
             </p>
 
-            <button className="bg-red-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-600 transition-colors shadow-lg hover:shadow-xl">
-              Get Started
-            </button>
-          </div>
-
-          {/* Right Illustration */}
-          <div className="relative">
-            <div className="relative bg-gradient-to-br from-red-50 to-blue-50 rounded-3xl p-8 lg:p-12">
-              <div className="aspect-square bg-white rounded-2xl shadow-xl flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-32 h-32 bg-red-100 rounded-full mx-auto flex items-center justify-center">
-                    <div className="w-24 h-24 bg-red-200 rounded-full"></div>
-                  </div>
-                  <p className="text-gray-400 text-sm">Imagen ilustrativa aquí</p>
+            <div className="flex flex-col gap-3 pt-2">
+              {[
+                "Productos certificados bajo normas ICONTEC y ANSI",
+                "Asesoría técnica personalizada sin costo",
+                "Despachos a todo el territorio colombiano",
+                "Garantía del fabricante en todos los productos",
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <span className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center text-[#001F3F] font-bold text-sm flex-shrink-0">✓</span>
+                  <span className="text-gray-700">{item}</span>
                 </div>
-              </div>
-
-              <div className="absolute top-8 right-8 w-12 h-12 bg-red-100 rounded-lg opacity-50"></div>
-              <div className="absolute bottom-12 left-8 w-8 h-8 bg-blue-100 rounded-full opacity-50"></div>
-              <div className="absolute top-1/2 right-4 w-6 h-6 bg-green-100 rounded opacity-50"></div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-white rounded-2xl shadow-lg p-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="w-16 h-16 bg-red-100 rounded-full mx-auto flex items-center justify-center">
-                <span className="text-2xl">👥</span>
+          {/* Valores */}
+          <div className="grid grid-cols-2 gap-6">
+            {[
+              { icon: "🛡️", title: "Seguridad", desc: "Todos nuestros productos cumplen estrictos estándares de seguridad y certificación." },
+              { icon: "🤝", title: "Confianza", desc: "Construimos relaciones a largo plazo con nuestros clientes basadas en la transparencia." },
+              { icon: "💡", title: "Asesoría", desc: "Nuestro equipo técnico te guía para elegir el equipo correcto para cada riesgo." },
+              { icon: "🚀", title: "Rapidez", desc: "Entregas ágiles y eficientes para que tu empresa nunca pare por falta de EPP." },
+            ].map((val, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-3">{val.icon}</div>
+                <h4 className="font-bold text-[#001F3F] text-lg mb-2">{val.title}</h4>
+                <p className="text-gray-500 text-sm leading-relaxed">{val.desc}</p>
               </div>
-              <h3 className="text-3xl font-bold text-gray-900">90+</h3>
-              <p className="text-gray-600">Users</p>
-            </div>
-            
-            <div className="space-y-2">
-              <div className="w-16 h-16 bg-red-100 rounded-full mx-auto flex items-center justify-center">
-                <span className="text-2xl">📍</span>
-              </div>
-              <h3 className="text-3xl font-bold text-gray-900">30+</h3>
-              <p className="text-gray-600">Locations</p>
-            </div>
-            
-            <div className="space-y-2">
-              <div className="w-16 h-16 bg-red-100 rounded-full mx-auto flex items-center justify-center">
-                <span className="text-2xl">🖥️</span>
-              </div>
-              <h3 className="text-3xl font-bold text-gray-900">50+</h3>
-              <p className="text-gray-600">Servers</p>
-            </div>
+            ))}
           </div>
         </div>
-      </section>
+
+        {/* Stats */}
+        <div className="bg-[#001F3F] rounded-2xl p-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { value: "10+",  label: "Años de experiencia" },
+              { value: "500+", label: "Empresas clientes" },
+              { value: "1000+",label: "Productos disponibles" },
+              { value: "98%",  label: "Satisfacción del cliente" },
+            ].map((stat, i) => (
+              <div key={i}>
+                <p className="text-4xl font-bold text-yellow-400 mb-2">{stat.value}</p>
+                <p className="text-gray-300 text-sm">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
