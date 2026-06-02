@@ -2,7 +2,16 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
-const sequelize = require('./src/config/database');
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres',
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false
+        }
+    },
+    logging: false
+});
 const Producto = require('./src/models/Producto');
 const Categoria = require('./src/models/Categoria');
 const productoRoutes = require('./src/routes/ProductoRoutes');
