@@ -2,16 +2,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-    dialect: 'postgres',
-    dialectOptions: {
-        ssl: {
-            require: true,
-            rejectUnauthorized: false
-        }
-    },
-    logging: false
-});
+const sequelize = require('./src/config/database');
 const Producto = require('./src/models/Producto');
 const Categoria = require('./src/models/Categoria');
 const productoRoutes = require('./src/routes/ProductoRoutes');
@@ -21,7 +12,6 @@ const notFound = require('./src/middleware/NotFound');
 
 const uploadRoutes = require('./src/routes/UploadRoutes');
 
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -29,7 +19,6 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 
 // Log de requests (opcional, para desarrollo)
 app.use((req, res, next) => {
@@ -53,7 +42,6 @@ app.get('/', (req, res) => {
 app.use('/api/productos', productoRoutes);
 app.use('/api/categorias', categoriaRoutes);
 app.use('/api/upload', uploadRoutes);
-
 
 // Middlewares de error (deben ir al final)
 app.use(notFound);
